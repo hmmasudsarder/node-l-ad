@@ -1,1 +1,6 @@
+.env
+dist
+.vscode
+generated
 node_modules
+uploads

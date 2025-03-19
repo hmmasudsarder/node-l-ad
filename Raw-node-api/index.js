@@ -14,6 +14,12 @@ app.createServer = () => {
 };
 
 app.handleReqRes = (req, res) => {
+  const parsedUrl = url.parse(req.url, true);
+  const path = parsedUrl.pathname;
+  const trimmedPath = path.replace(/^\/+|\/+$/g, '');
+  const method = req.method.toLowerCase();
+  const queryStringObject = parsedUrl.query;
+  const headersObject = req.headers;
   res.end("Hello, World!");
 };
 
