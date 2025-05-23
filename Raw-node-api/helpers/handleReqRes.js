@@ -1,6 +1,3 @@
-
-
-// dependencies
 const url = require('url');
 const { StringDecoder } = require('string_decoder');
 const routes = require('../routes');
@@ -10,9 +7,9 @@ const { notFoundHandler } = require('../handlers/routeHandlers/notFoundHandler')
 const handler = {};
 
 handler.handleReqRes = (req, res) => {
-    // request handling
-    // get the url and parse it
+    // concerate the request url with the query string
     const parsedUrl = url.parse(req.url, true);
+
     const path = parsedUrl.pathname;
     const trimmedPath = path.replace(/^\/+|\/+$/g, '');
     const method = req.method.toLowerCase(); 
