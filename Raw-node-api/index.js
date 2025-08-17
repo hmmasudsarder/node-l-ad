@@ -1,21 +1,26 @@
-const http = require("http");
-const { decode } = require("punycode");
 
-import {handleReqRes} from require("./helpers/handleReqRes");
+// dependencies
+const http = require('http');
+const { handleReqRes } = require('./helpers/handleReqRes');
 
+// app object - module scaffolding
 const app = {};
 
+// configuration
 app.config = {
-  port: 5000,
+    port: 3000,
 };
 
+// create server
 app.createServer = () => {
-  const server = http.createServer(app.handleReqRes);
-  server.listen(app.config.port, () => {
-    console.log(`Server is listening on port ${app.config.port}`);
-  });
+    const server = http.createServer(app.handleReqRes);
+    server.listen(app.config.port, () => {
+        console.log(`listening to port ${app.config.port}`);
+    });
 };
 
-app.handler = handleReqRes;
+// handle Request Response
+app.handleReqRes = handleReqRes;
 
+// start the server
 app.createServer();
