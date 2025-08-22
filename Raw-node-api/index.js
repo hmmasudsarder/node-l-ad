@@ -11,13 +11,30 @@ const app = {};
 //     port: 5000,
 // };
 
-data.create('test', 'newFile', { name: 'testFile', content: 'this is a test file' }, (err) => {
-    if (!err) {
-        console.log('File created successfully');
-    } else {
-        console.error('Error creating file:', err);
-    }
-});
+// data.create('test', 'newFile', { name: 'testFile', content: 'this is a test file' }, (err) => {
+//     if (!err) {
+//         console.log('File created successfully');
+//     } else {
+//         console.error('Error creating file:', err);
+//     }
+// });
+
+// data.read('test', 'newFile', (err, data) => {
+//     console.log(err, 'Read data:', data);
+// });
+
+// data.update('test', 'newFile', { name: 'updatedFile', content: 'this is an updated test file' }, (err) => {
+//     console.log(err)
+// });
+
+
+// data.delete('test', 'newFile', (err) => {
+//     if (!err) {
+//         console.log('File deleted successfully');
+//     } else {
+//         console.error('Error deleting file:', err);
+//     }
+// });
 
 // create server
 app.createServer = () => {
